@@ -24,9 +24,9 @@ function PreviousWork() {
         },
         {
             id: 6,
-            src: '/images/HuggingFace.png',
-            alt: 'Hugging Face Certification',
-            link: 'https://www.datacamp.com/completed/statement-of-accomplishment/course/955b354ed5d807e83815a3b482808f07d4480f1e'
+            src: '/images/LLMOPS.png',
+            alt: 'LLMOPS concepts Certification',
+            link: 'https://www.datacamp.com/completed/statement-of-accomplishment/course/62ab4e2efc8860a5b7eb9ad7f6177988d6b7725e'
         },
         {
             id: 7,
