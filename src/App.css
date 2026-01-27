@@ -1,0 +1,417 @@
+:root {
+  /* --color-primary: #325285; */
+  --color-primary: #00278a;
+  --color-primary-light: #00278a;
+  --color-primary-dark: #000a53;
+  --color-secondary: #BAE64C;
+  --color-tertiary: #EFD3D7;
+  --color-bg: hsl(23, 39%, 85%);
+  --color-text: #555B6E;
+  --color-text-white: #ffffff;
+  --color-accent: #78C3FB;
+}
+/* https://coolors.co/78c3fb-555b6e-efd3d7-bae64c-325285 */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+#root {
+  height: 100%;
+  width: 100vw;
+}
+.card {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.read-the-docs {
+  color: #888;
+}
+.HomePage {
+  font-family: monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.HomePage-links-wrapper {
+  z-index: 30;
+}
+.HomePage-side-wrapper {
+  flex: 1;
+  color: white;
+  z-index: 25;
+  margin-left: 5%;
+  font-size: 0.7em;
+  min-width: 0; 
+  overflow: hidden;
+}
+
+.HomePage-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-image: url('/bg-image.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 20;
+}
+.HomePage-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 25;
+  color: white;
+}
+.HomePage-content-summary {
+  font-size: 0.5em;
+  width: 60%;
+}
+.HomePage-content-name {
+  margin-top: 0;
+}
+.HomePage-content-role {
+  width: 80%;
+  white-space: normal;
+  color: var(--color-secondary);
+}
+.HomePage-description{
+  display: flex;
+  flex-direction: column;
+}
+.HomePage-description-text span{
+  display: inline-block;
+  white-space: nowrap;
+}
+.HomePage-description-location span {
+  white-space: normal;
+  max-width: 100%;
+}
+.HomePage-description-invite span {
+  --chars: 18;
+  position: relative;
+  overflow: hidden;
+  width: 0;
+  max-width: 100%;
+  padding-right: 4px;
+  color: var(--color-secondary);
+  animation:
+    typingLoop 7s steps(var(--chars)) infinite
+}
+.HomePage-description-invite span::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  bottom: 0.15em;          /* align with last line */
+  width: 2px;
+  height: 1em;
+  background-color: var(--color-secondary);
+  opacity: 1;
+  z-index: 30;
+  animation: blink 1.2s step-end infinite;
+  pointer-events: none;
+}
+.HomePage-description-invite span::after {
+  height: 1.2em;
+  box-shadow: 0 0 8px var(--color-secondary);
+}
+/* .HomePage-description-experience span {
+  --chars: 22;
+  animation-delay: 0s, 0s;
+}
+.HomePage-description-location span {
+  --chars: 18;
+  animation-delay: 2.4s, 2.4s;
+}
+.HomePage-description-invite span {
+  --chars: 8;
+  animation-delay: 4.8s, 4.8s;
+} */
+/* Typing + pause + reset */
+@keyframes typingLoop {
+  0%   { width: 0; }
+  45%  { width: 100%; }   /* typing */
+  70%  { width: 100%; }   /* pause */
+  100% { width: 0; }     /* reset */
+}
+/* typing */
+@keyframes typing {
+  0%   { width: 0; }
+  40%  { width: 100%; white-space: normal}
+  100% { width: 100%; white-space: normal}
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Reset widths so it loops cleanly */
+@keyframes reset {
+  0% { }
+  100% { }
+}
+/* Reset text at loop start */
+.HomePage-description-location span {
+  animation-iteration-count: infinite;
+}
+.HomePage-description-location span {
+  border-right-color: var(--color-secondary);
+  animation:
+    typing 2s steps(var(--chars)) forwards,
+    blink 1s step-end infinite;
+}
+.ContactPage, .Education, .HomePage, .App {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  background-color: var(--color-tertiary);
+  width: 100%;
+}
+
+.ContactPage {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-white);
+}
+
+.ContactPage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 66%;
+}
+.ContactPage-content .ContactPage-content-text {
+  font-size: 1.7em;
+  width: 60%;
+  padding-top: 75px;
+}
+
+.ContactPage-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: start;
+  width: 66%;
+  padding-top: 50px;
+}
+.ContactPage-contact-details, .ContactPage-contact-socials {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  padding-right: 30px;
+}
+.ContactPage-contact-name {
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+.ContactPage-contact-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding-top: 10px;
+}
+.ContactPage-contact-links-wrapper {
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+}
+.ContactPage-contact-resume {
+  padding-top: 10px;
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+  display: inline-block;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.PreviousWork {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  box-sizing: border-box;
+  margin-top: 5%;
+}
+.PreviousWork-subtitle {
+  font-size: 1em;
+  font-family: monospace;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.PreviousWork-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap-reverse;
+  width: 70%;
+  margin-top: 5%;
+}
+.PreviousWork-content-image {
+  max-width: 200px;
+  object-fit: cover;
+  height: 150px;
+}
+
+.Skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  font-family: monospace;
+}
+
+.Skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+.Skills-title {
+  padding: 10%;
+}
+.Skills-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+.Skills-title-text {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-family: sans-serif;
+}
+.Skills-subtitle {
+  font-size: 2em;
+  color: var(--color-text-white);
+  font-weight: 600;
+  margin-top: 0;
+}
+.Skills-content-bar {
+ width: 100%;
+ height: 10px;
+ border-radius: 5px;
+ background-color: var(--color-text-white);
+}
+.Skills-content-bar-fill {
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-secondary);
+}
+.Skills-content-bar-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.Skills-content-bar-label {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.Education {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.Education-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex:2;
+}
+.Education-title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-family: monospace;
+}
+.Education-content-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  font-size: 0.7em;
+  height: 275px;
+  color: var(--color-text-white);
+  padding: 20px;
+  font-family: monospace;
+}
+.Education-content-item-institution {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
