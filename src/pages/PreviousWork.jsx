@@ -30,6 +30,12 @@ function PreviousWork() {
         },
         {
             id: 7,
+            src: '/images/AI_systems.png',
+            alt: 'Developing AI systems Certification',
+            link: 'https://www.datacamp.com/completed/statement-of-accomplishment/course/abaa27d9f17621d4aff9702227b659469b246b4e'
+        },
+        {
+            id: 7,
             src: '/images/kitchen_thumbnail.png',
             alt: 'Project 1',
             link: 'https://product-list-with-cart-sigma-three.vercel.app/'
